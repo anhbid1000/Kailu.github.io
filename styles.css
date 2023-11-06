@@ -1,0 +1,358 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200i,400&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --white-color: #f3f3f3;
+  --dark-color: #1b1b32;
+  --green-color: #37af65;
+  --darkblue-color: rgba(27, 27, 50, 0.8);
+  --normalcheckbox-color: white;
+  --bordercheckbo-color: rgb(118, 118, 118);
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background: var(--color-darkblue);
+  background-image: linear-gradient(
+      115deg,
+      rgba(58, 58, 158, 0.8),
+      rgba(136, 136, 206, 0.7)
+    ),
+    url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.
+
+/* Framework */
+
+.my-1 {
+  margin: 1rem 0;
+}
+.my-2 {
+  margin: 1.5rem 0;
+}
+.my-3 {
+  margin: 2rem 0;
+}
+.my-4 {
+  margin: 2.5rem 0;
+}
+.my-5 {
+  margin: 3rem 0;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+
+.py-2 {
+  margin: 1.5rem 0;
+}
+
+.py-3 {
+  margin: 2rem 0;
+}
+
+.py-4 {
+  margin: 2.5rem 0;
+}
+
+.py-5 {
+  margin: 3rem 0;
+}
+
+.px-1 {
+  padding: 0 1rem;
+}
+.px-1 {
+  padding: 0 1.5rem;
+}
+.px-1 {
+  padding: 0 2rem;
+}
+.px-1 {
+  padding: 0 2.5rem;
+}
+.px-1 {
+  padding: 0 3rem;
+}
+
+/* container */
+
+.container {
+  color: var(--white-color);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+}
+/* header */
+.head {
+  line-height: 1.3;
+  margin-bottom: 2rem;
+}
+.text-title {
+  font-weight: 400;
+  font-size: 1.6em;
+  margin-bottom: 0.5rem;
+}
+.text-description {
+  font-weight: 200;
+  font-style: italic;
+  font-size: 1.125rem;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0, 0.4);
+  text-align: center;
+  text-transform: none;
+}
+.text-center {
+  text-align: center;
+}
+
+/* form */
+form {
+  padding: 2.5rem;
+  justify-self: center;
+  background-color: var(--darkblue-color);
+  border-radius: 0.25rem;
+  width: 720px;
+}
+.box {
+  margin-bottom: 1.25rem;
+  padding: 0.25rem;
+}
+.container-option {
+  display: flex;
+
+  align-items: center;
+}
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+}
+.option {
+  display: inline;
+  font-size: 1.125rem;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.input-radio,
+.input-checkbox {
+  appearance: auto;
+  margin-right: 0.625rem;
+  min-height: 1.25rem;
+  min-width: 1.25rem;
+}
+
+.input-write {
+  width: 100%;
+  height: 2.375rem;
+  border: 1px solid #ced4da;
+}
+.input-write:focus {
+  outline: 4px solid #33336f;
+}
+select {
+  color: #495057;
+}
+
+textarea {
+  width: 100%;
+  min-height: 120px;
+  border-radius: 0;
+}
+.submit-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--green-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* Custom radio */
+.container-radio {
+  position: relative;
+  width: 19%;
+}
+.container-radio input[type="radio"] {
+  position: absolute; /* ở đây việc đặt absolute là để nhận biết rằng radio coi như tàng hình, cho nó đề lên hoặc đè nó */
+  visibility: hidden;
+}
+.container-radio label {
+  position: relative;
+  left: 0;
+  padding-left: 30px;
+  z-index: 9;
+}
+.container-radio .outside-circle {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  left: -1px;
+  background-color: var(--normalcheckbox-color);
+  border: 1px solid rgb(118, 118, 118);
+  border-radius: 100%;
+  z-index: 5;
+}
+/* .container-radio .outside-circle:hover {
+  border: 1px solid rgb(85, 85, 85); /*ở đây để chỉnh việc khi mà chạm vào hàng của nút radio thì border nó đổi màu thì chắc chắn ta sẽ dùng hover nhưng dùng hover cho cái nào mới được ( ở đây ta ko dùng cho chình cái div giả) bởi lẽ về bản chất nó đang bị padding của label đè lên do ( thuộc tính index ) nên nhiều
+ lập trình viên lại chọn cách sửa giá trị z-index cho nó ko bị đè nhưng nhu v thì cũng như ko do tại phần label ko đè nữa thì sao mà nhấn dô nút nó hiện thị checked nữa
+ nên ở đang ta sẽ liên kết chậm vào label thôi là border đổi màu luôn  
+}*/
+
+.container-radio .outside-circle::before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 12px;
+  /* background-color: red; ta chỉnh thành màu đỏ thực chất là để nhìn thấy được mà căn chỉnh thuộc tính cho nó còn khi ko cho nó màu nó sẽ tự hiểu là ko có và tàng hình */
+  top: 3px;
+  bottom: 0;
+  left: 3px;
+  border-radius: 100%;
+}
+.container-radio label:hover ~ .outside-circle {
+  border: 1px solid rgb(85, 85, 85);
+}
+
+.container-radio input[type="radio"].input-radio:checked ~ .outside-circle {
+  border: 1px solid rgb(0, 132, 255);
+}
+.container-radio
+  input[type="radio"].input-radio:checked
+  ~ .outside-circle::before {
+  background-color: rgb(0, 132, 255);
+}
+.container-radio
+  input[type="radio"].input-radio:checked:hover
+  ~ .outside-circle {
+  border: 1px solid rgb(14, 116, 210);
+} /* ý chỉ ptu radio vừa đang được checked vừa  hover vào mà do radio có liên kết id với label nên việc chỉ vào label thì nó cũng ra được cái ta cần*/
+.container-radio
+  input[type="radio"].input-radio:checked:hover
+  ~ .outside-circle::before {
+  background-color: rgb(14, 116, 210);
+}
+
+/* giải thích cách custom: có thể thấy việc thay đổi màu sặc ban đầu của 1 nút radio là ko thể nên để làm được ta chỉ có cách duy nhất là tạo lại nút radio cho riêng mình 
+ta có các bước như trên
+1. tạo độ rộng cho container cũng như đặt position cho nó để set position cho ptu con
+2. dấu đi nút radio ban đầu ( bằng thuộc tính visibility: hiển thị) cho nó tàng hình ở đây ta đã gọi là tàng hình thì ta cho nó tàng hình luôn cả về hình ảnh lẫn bản chất và position absolute làm việc đó
+3. tạo position: relative , độ rộng cao, padding ...vvv cho label ( việc gắn relative là để cái div giả ( div mà có nhiệm vụ tạo cho ta nút radio mói khi đặt absolute sẽ định vị theo thằng label [ đứng trước nó])
+       ở đây việc ta đây padding left là vô cùng quan trọng . Về mặt bản chất ban đầu khi ta check vào radio thì cả việc nhấn trực tiếp nút hay chữ đều được 
+       nhưng mà ở đây khi tạo nút mới bản chất thằng div giả nó chỉ là hình dạng chứ ko phải radio thì sao mà nhấn lên nó để check được mà ta chỉ nhấn được thông qua thằng label( vì label sẽ liên kết tới thằng radio đã ẩn
+       vậy nên ta đẩy padding left sao cho đè luôn ptu div là oke khi đó phần padding đc hiểu là của ptu label và ta nhấn vào nut div vẫn sẽ hiển thị được
+       z-index : là 1 cái quan trọng( ta phải để cho thằng div giả có z-index thấp hơn thì thằng padding về bản chất phần tử mới là đè lên thằng div giả được.
+       
+4. tạo khung và chấm tròn ( như trên)
+5.thay đổi màu nút khi nút được checked( như trên)
+*/
+
+/* Custom Checkbox */
+
+.container-checkbox {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+.container-checkbox input[type="checkbox"] {
+  position: absolute;
+  visibility: hidden;
+}
+.container-checkbox label {
+  display: block;
+  position: relative;
+  left: 0;
+  padding-left: 30px;
+  z-index: 9;
+}
+.container-checkbox .outside-block {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 0;
+  top: 0;
+  background-color: var(--normalcheckbox-color);
+  border: 1px solid rgb(118, 118, 118);
+  border-radius: 2px;
+}
+.container-checkbox .outside-block::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 10px;
+  height: 5px;
+  top: 4px;
+  bottom: 0;
+  left: 3px;
+  border: 4px solid white;
+  border-top: none;
+  border-right: none;
+  opacity: 0;
+  transform: rotate(-45deg);
+}
+.container-checkbox label:hover ~ .outside-block {
+  border: 1px solid rgb(85, 85, 85);
+}
+.container-checkbox
+  input[type="checkbox"]:checked.input-checkbox
+  ~ .outside-block {
+  background-color: rgb(0, 132, 255);
+  border: none;
+}
+.container-checkbox
+  input[type="checkbox"]:checked.input-checkbox
+  ~ .outside-block::before {
+  opacity: 1;
+}
+
+/* Phân tích cách custom ( nó khá là giống so với cách custom 1 cái radio 
+cũng là việc ta sẽ dấu nút ban đầu rồi sau nó từ div giả tạo nên 1 nút mới , liến kết label với input rồi đẩy padding left sao cho đè lên luôn cái div giả ( cách làm tương tự)
+chỉ khác ở chỗ tạo hình và 1 chút ở chỗ hover 
+tạo hình ở cái đầu chỉ cầu tạo 1 hình tròn bằng border radius
+ở đây để tạo 1 dấu tích ta cần  |__  hình kiểu vậy rồi quay nó lại 
+thì để tạo được hình việc mà ở trong trống thì chỉ có border ( bỏ đi 2 cạnh)
+sau đó ta dùng transform : rotate( _deg)  để xoay nó theo gốc ta muốn
+
+
+*/
+
+/* Custom thanh chọn select */
+
+/* media tablet and mobile */
+@media only screen and (max-width: 720px) {
+  .container {
+    width: 100%;
+    overflow: auto;
+  }
+  header,
+  form {
+    width: 95%;
+  }
+}
